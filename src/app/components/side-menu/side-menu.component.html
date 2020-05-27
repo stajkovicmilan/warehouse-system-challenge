@@ -1,0 +1,19 @@
+<div class="menu">
+  <ul class="menu-navigation">
+    <li *ngFor="let floor of floors" class="menu-navigation__item">
+      <a href="javascript:;" (click)="selectFloor(floor.id)">{{floor.name}}</a>
+      <ul class="menu-sub-navigation" *ngIf="currentFloor === floor.id">
+        <li class="menu-sub-navigation__item" *ngFor="let section of floor.sections">
+          <a routerLink="/products/{section.id}">{{section.name}}</a>
+        </li>
+        <a routerLink="/add-section" class="navigation-button">
+          <i class="fas fa-folder-plus"></i>
+          Add Section
+        </a>
+      </ul>
+    </li>
+  </ul>
+  <a routerLink="/add-floor" class="navigation-button">
+    Add Floor
+  </a>
+</div>
