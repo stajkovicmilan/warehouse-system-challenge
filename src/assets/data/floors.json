@@ -1,7 +1,7 @@
 [{
   "id": 1,
   "name": "Floor 1",
-  "Sections": [{
+  "sections": [{
     "id": 11,
     "name": "Section 11",
     "products": []

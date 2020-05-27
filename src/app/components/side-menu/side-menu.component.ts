@@ -18,10 +18,9 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     private apiService: ApiService
   ) { }
 
-  ngOnInit(): void {
-    this.subscription = this.apiService
-      .getData()
-      .subscribe((value) => {
+  async ngOnInit() {
+    const data = await this.apiService.getData();
+    this.subscription = data.subscribe((value) => {
         this.floors = value;
       });
   }
@@ -36,6 +35,10 @@ export class SideMenuComponent implements OnInit, OnDestroy {
       console.error('Selected floor does not exists');
       return;
     }
-    this.currentFloor = id;
+    if (this.currentFloor === id) {
+      this.currentFloor = null;
+    } else {
+      this.currentFloor = id;
+    }
   }
 }

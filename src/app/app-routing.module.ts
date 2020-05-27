@@ -6,7 +6,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
 
 const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
-    { path: 'products/:sectionId', component: ProductsListComponent },
+    { path: 'products/:floorId/:sectionId', component: ProductsListComponent },
     { path: 'add-floor', component: ProductsListComponent },
     { path: 'add-section', component: ProductsListComponent }
   ]
