@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddFroorAndSectionComponent } from './add-froor-and-section.component';
+import { AddSectionComponent } from './add-section.component';
 
-describe('AddFroorAndSectionComponent', () => {
-  let component: AddFroorAndSectionComponent;
-  let fixture: ComponentFixture<AddFroorAndSectionComponent>;
+describe('AddSectionComponent', () => {
+  let component: AddSectionComponent;
+  let fixture: ComponentFixture<AddSectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AddFroorAndSectionComponent ]
+      declarations: [ AddSectionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddFroorAndSectionComponent);
+    fixture = TestBed.createComponent(AddSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

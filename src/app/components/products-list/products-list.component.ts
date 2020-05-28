@@ -4,6 +4,7 @@ import { Floor } from 'src/app/models/floor';
 import { Section } from 'src/app/models/section';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
+import { ProductComponent } from '../product/product.component';
 
 @Component({
   selector: 'app-products-list',
@@ -21,11 +22,11 @@ export class ProductsListComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
+  ngOnInit() {
+    this.route.params.subscribe(async params => {
       this.floorId = +params.floorId;
       this.sectionId = +params.sectionId;
-      this.products = this.apiService.getProdductsForSection(this.floorId, this.sectionId);
+      this.products = await this.apiService.getProdductsForSection(this.floorId, this.sectionId);
    });
   }
 

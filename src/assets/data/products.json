@@ -1,0 +1,58 @@
+[
+  {
+    "code": "HHHH 000111",
+    "quantity": 100,
+    "floorId": 1,
+    "floorname": "",
+    "sectionId": 11,
+    "sectionName": ""
+  },
+  {
+    "code": "HHHH 000112",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 11
+  },
+  {
+    "code": "HHHH 000113",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 11
+  },
+  {
+    "code": "HHHH 000121",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 12
+  },
+  {
+    "code": "HHHH 110122",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 12
+  },
+  {
+    "code": "HHHH 000123",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 12
+  },
+  {
+    "code": "HHHH 000131",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 13
+  },
+  {
+    "code": "HHHH 000132",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 13
+  },
+  {
+    "code": "HHHH 000133",
+    "quantity": 100,
+    "floorId": 1,
+    "sectionId": 13
+  }
+]

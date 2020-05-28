@@ -1,9 +1,11 @@
 <div class="product-overview">
   <div class="product-item" *ngFor="let product of products">
-    <p>{{product.code}}</p>
-    <p>{{product.quantity}}</p>
-    <p>{{product.floorId}}</p>
-    <p>{{product.sectionId}}</p>
+    <a routerLink="/product/{{product.code}}">
+      <p>{{product.code}}</p>
+      <p>{{product.quantity}}</p>
+      <p>{{product.floorId}}</p>
+      <p>{{product.sectionId}}</p>
+    </a>
   </div>
   <button (click)="addFloor()">Add Floor</button>
   <button (click)="addSection()">Add Section</button>

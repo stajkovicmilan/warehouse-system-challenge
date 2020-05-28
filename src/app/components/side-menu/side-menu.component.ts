@@ -19,7 +19,7 @@ export class SideMenuComponent implements OnInit, OnDestroy {
   ) { }
 
   async ngOnInit() {
-    const data = await this.apiService.getData();
+    const data = await this.apiService.getFloors();
     this.subscription = data.subscribe((value) => {
         this.floors = value;
         console.log(value);
