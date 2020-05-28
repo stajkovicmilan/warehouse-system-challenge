@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 import { Floor } from 'src/app/models/floor';
 import { Section } from 'src/app/models/section';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductComponent } from '../product/product.component';
 
@@ -20,6 +20,7 @@ export class ProductsListComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -43,5 +44,9 @@ export class ProductsListComponent implements OnInit {
     f.name = new Date().getMilliseconds().toString();
     f.floorId = 1;
     this.apiService.addSection(f);
+  }
+
+  openAddProduct() {
+    this.router.navigateByUrl(`/product/${this.floorId}/${this.sectionId}`);
   }
 }

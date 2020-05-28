@@ -13,6 +13,7 @@ const routes: Routes = [{
     { path: 'add-floor', component: AddFroorComponent },
     { path: 'add-section/:floorId', component: AddSectionComponent },
     { path: 'product', component: ProductComponent },
+    { path: 'product/:floorId/:sectionId', component: ProductComponent },
     { path: 'product/:code', component: ProductComponent },
   ]
 }];

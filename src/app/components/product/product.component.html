@@ -3,19 +3,21 @@
   <form class="form" [formGroup]="productForm" (submit)="save()">
     <div class="form-group">
       <label>Code</label>
-      <input type="text" formControlName="code" />
+      <input type="text" minlength="2" maxlength="4" class="form-control code-prefix" formControlName="codePrefix" placeholder="XXXX" />
+      <input type="text" minlength="4" maxlength="6" class="form-control code-suffix" formControlName="codeSuffix" placeholder="123456" />
+      <div class="muted">First part 2-4 letter uppercase, second part 4-6 digits</div>
     </div>
     <div class="form-group">
       <label>Quantity</label>
-      <input type="number" formControlName="quantity" />
+      <input type="number" class="form-control" formControlName="quantity" />
     </div>
     <div class="form-group">
       <label>Floor ID</label>
-      <input type="text" formControlName="floorId" />
+      <input type="text" class="form-control" readonly="readonly" formControlName="floorId" />
     </div>
     <div class="form-group">
       <label>Section ID</label>
-      <input type="text" formControlName="sectionId" />
+      <input type="text" class="form-control" readonly="readonly" formControlName="sectionId" />
     </div>
     <button type="submit" class="button button-main">Save</button>
   </form>

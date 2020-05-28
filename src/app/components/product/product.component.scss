@@ -1,0 +1,15 @@
+.form-container {
+  .form-group {
+    .form-control {
+      &.code-prefix {
+        display: inline-block;
+        width: 70px;
+        margin-right: 20px;
+      }
+      &.code-suffix {
+        display: inline-block;
+        width: 120px;
+      }
+    }
+  }
+}
