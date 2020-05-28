@@ -3,3 +3,43 @@
   height: 50px;
   background-color: rgba(0,0,0,0.5);
 }
+
+.search {
+  float: right;
+  margin: 7px 10px;
+  position: relative;
+
+  label {
+    padding-right: 10px;
+  }
+
+  .global-search {
+    height: 30px;
+    width: 300px;
+  }
+
+  .search-results {
+    position: absolute;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 268px;
+    padding: 10px 15px;
+    box-shadow: 1px 1px 4px #ccc;
+
+    li {
+      border-bottom: 1px solid #ddd;
+
+      .item-link {
+        width: 100%;
+        display: block;
+        padding: 5px 0;
+        color: #333;
+        text-decoration: none !important;
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}

@@ -84,14 +84,14 @@ export class ProductComponent implements OnInit {
   }
 
   productCodePrefixValidator(control: AbstractControl): { [key: string]: boolean } | null {
-    if (!control.value || control.value.length < 2 || control.value.length > 4) {
+    if (!control.value || control.value.length < 2 || control.value.length > 4 || /\d/.test(control.value)) {
       return { invalidCodePrefix: true };
     }
     return null;
   }
 
   productCodeSuffixValidator(control: AbstractControl): { [key: string]: boolean } | null {
-    if (!control.value || control.value.length < 4 || control.value.length > 6) {
+    if (!control.value || control.value.length < 4 || control.value.length > 6 || RegExp(('[a-zA-Z]+')).test(control.value)) {
       return { invalidCodePrefix: true };
     }
     return null;

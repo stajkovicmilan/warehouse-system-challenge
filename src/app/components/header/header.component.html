@@ -1,7 +1,12 @@
 <div class="header">
   <span class="brand"></span>
-  <div>
+  <div #searchBlock class="search">
     <label for="products-search">Search products:</label>
-    <input type="search" id="products-search">
+    <input type="text" class="global-search" id="products-search" [(ngModel)]="searchText" (ngModelChange)="search()">
+    <ul class="search-results" *ngIf="results && results.length">
+      <li *ngFor="let r of results">
+        <a class="item-link" routerLink="/product/{{r.code}}" (click)="cleanResults()">{{r.code}}</a>
+      </li>
+    </ul>
   </div>
 </div>

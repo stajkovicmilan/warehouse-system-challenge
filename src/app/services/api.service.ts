@@ -82,7 +82,7 @@ export class ApiService {
     const searchableFields = ['code', 'floorName', 'sectionName'];
     return this.productsData.filter((x) => {
       for (const field of searchableFields) {
-        if (x[field].includes(text)) {
+        if (x[field] && x[field].includes(text)) {
           return true;
         }
       }
