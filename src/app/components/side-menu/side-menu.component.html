@@ -6,7 +6,7 @@
         <li class="menu-sub-navigation__item" *ngFor="let section of floor.sections">
           <a routerLink="/products/{{floor.id}}/{{section.id}}">{{section.name}}</a>
         </li>
-        <a routerLink="/add-section" class="navigation-button">
+        <a routerLink="/add-section/{{floor.id}}" class="navigation-button">
           <i class="fas fa-folder-plus"></i>
           Add Section
         </a>

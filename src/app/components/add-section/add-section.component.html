@@ -1,1 +1,14 @@
-<p>add-section works!</p>
+<div class="form-container">
+  <div class="title">Add new Section for Floor {{floorId}}</div>
+  <form class="form" [formGroup]="addSectionForm" (submit)="save()">
+    <div class="form-group">
+      <label>Section ID</label>
+      <input type="text" class="form-control" formControlName="id" readonly="readonly" />
+    </div>
+    <div class="form-group">
+      <label>Section Name</label>
+      <input type="text" class="form-control" formControlName="name" />
+    </div>
+    <button type="submit" class="button button-main">Save</button>
+  </form>
+</div>

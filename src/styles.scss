@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 html {
   height: calc(100% - 50px);
@@ -10,11 +10,53 @@ body {
   padding: 0;
   display: block;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   height: calc(100% - 50px);
 }
 
 ul {
   padding: 0;
   list-style: none;
+}
+
+.form-container {
+  width: 100%;
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    max-width: 600px;
+
+    .form-group {
+      margin-bottom: 10px;
+
+      label {
+        width: 100%;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-control {
+        width: 100%;
+        display: block;
+        height: 36px;
+        padding: 0 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+
+        &[readonly="readonly"] {
+          background: #ddd;
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
 }
