@@ -9,6 +9,7 @@ import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductComponent } from './components/product/product.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { AddFroorAndSectionComponent } from './components/add-froor-and-section/add-froor-and-section.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     HeaderComponent,
     SideMenuComponent,
     ProductsListComponent,
-    ProductComponent
+    ProductComponent,
+    AddFroorAndSectionComponent
   ],
   imports: [
     BrowserModule,

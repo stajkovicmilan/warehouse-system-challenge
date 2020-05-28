@@ -8,7 +8,7 @@ const routes: Routes = [{
   path: '', component: LayoutComponent, children: [
     { path: 'products/:floorId/:sectionId', component: ProductsListComponent },
     { path: 'add-floor', component: ProductsListComponent },
-    { path: 'add-section', component: ProductsListComponent }
+    { path: 'add-section/:floorId', component: ProductsListComponent }
   ]
 }];
 

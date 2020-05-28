@@ -22,6 +22,7 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     const data = await this.apiService.getData();
     this.subscription = data.subscribe((value) => {
         this.floors = value;
+        console.log(value);
       });
   }
 

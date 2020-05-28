@@ -21,6 +21,7 @@ export class ApiService {
     if (!this.dataInitialized) {
       const floors: Floor[] = await this.http.get<Floor[]>('/assets/data/floors.json').toPromise();
       this.data.next(floors);
+      this.dataInitialized = true;
     }
   }
 
@@ -74,5 +75,75 @@ export class ApiService {
       // do something
     }
     return section.products;
+  }
+
+  search(text: string): Product[] {
+    let findedProducts: Product[] = this.searchProductsByCode(text);
+    if (!isNaN(+text)) {
+      let tempProducts = this.searchProductsByFloor(+text);
+      findedProducts = this.excludeMatchingProducts(findedProducts, tempProducts);
+
+      tempProducts = this.searchProductsBySection(+text);
+      findedProducts = this.excludeMatchingProducts(findedProducts, tempProducts);
+    }
+    return findedProducts;
+  }
+
+  searchProductsByFloor(floorId: number): Product[] {
+    this.ensureData();
+    const floor: Floor = this.data.value.find((x) => x.id === floorId);
+    if (!floor) {
+      return [];
+    }
+    let productsByFloor: Product[] = [];
+    floor.sections.forEach(section => {
+      productsByFloor = [...productsByFloor, ...section.products];
+    });
+    return productsByFloor;
+  }
+
+  searchProductsBySection(sectionId: number): Product[] {
+    this.ensureData();
+    let section: Section;
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < this.data.value.length; i++) {
+      if (section) { break; }
+      if (this.data.value[i].sections.length) {
+        section = this.data.value[i].sections.find((x) => x.id === sectionId);
+      }
+    }
+    return section.products.length ? section.products : [];
+  }
+
+  searchProductsByCode(text: string): Product[] {
+    this.ensureData();
+    const products: Product[] = [];
+    // tslint:disable-next-line: prefer-for-of
+    for (let i = 0; i < this.data.value.length; i++) {
+      if (this.data.value[i].sections.length) {
+        // tslint:disable-next-line: prefer-for-of
+        for (let p = 0; p < this.data.value[i].sections.length; p++) {
+          if (this.data.value[i].sections[p].products.length) {
+            // tslint:disable-next-line:prefer-for-of
+            for (let s = 0; s < this.data.value[i].sections[p].products.length; s++) {
+              if (this.data.value[i].sections[p].products[s].code.includes(text)) {
+                products.push(this.data.value[i].sections[p].products[s]);
+              }
+            }
+          }
+        }
+      }
+    }
+    return products;
+  }
+
+  excludeMatchingProducts(firstProductList: Product[], secoundProductList: Product[]): Product[] {
+    const filteredProductList: Product[] = [...firstProductList];
+    secoundProductList.forEach(product => {
+      if (!firstProductList.find((x) => x.code === product.code)) {
+        filteredProductList.push(product);
+      }
+    });
+    return filteredProductList;
   }
 }
