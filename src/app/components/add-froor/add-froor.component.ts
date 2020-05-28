@@ -30,5 +30,13 @@ export class AddFroorComponent implements OnInit {
     }
     const data = this.addFloorForm.value;
     await this.apiService.addFloor(data);
+    this.resetForm();
+  }
+
+  resetForm(){
+    this.addFloorForm = this.fb.group({
+      id: [new Date().getTime(), [Validators.required]],
+      name: null,
+    });
   }
 }

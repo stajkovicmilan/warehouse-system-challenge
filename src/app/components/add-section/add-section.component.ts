@@ -39,6 +39,14 @@ export class AddSectionComponent implements OnInit {
     const data = this.addSectionForm.value;
     data.floorId = +this.floorId;
     this.apiService.addSection(data);
+    this.resetForm();
+  }
+
+  resetForm(){
+    this.addSectionForm = this.fb.group({
+      id: [new Date().getTime(), [Validators.required]],
+      name: null,
+    });
   }
 
 }
