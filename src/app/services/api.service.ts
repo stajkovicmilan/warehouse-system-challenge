@@ -94,7 +94,6 @@ export class ApiService {
       throw new Error('Error: Product does not exists');
     }
     existing.quantity = product.quantity;
-    existing.code = product.code;
   }
 
   async getProdductsForSection(floorId: number, sectionId: number): Promise<Product[]> {

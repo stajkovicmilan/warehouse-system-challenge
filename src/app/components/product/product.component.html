@@ -4,8 +4,8 @@
   <form class="form" [formGroup]="productForm" (submit)="isSubmitted = true; save()">
     <div class="form-group">
       <label>Code</label>
-      <input type="text" minlength="2" maxlength="4" class="form-control code-prefix" [ngClass]="[ isSubmitted ? 'submitted' : 'unsubmitted' ]" formControlName="codePrefix" placeholder="XXXX" />
-      <input type="text" minlength="4" maxlength="6" class="form-control code-suffix" [ngClass]="[ isSubmitted ? 'submitted' : 'unsubmitted' ]" formControlName="codeSuffix" placeholder="123456" />
+      <input type="text" minlength="2" maxlength="4" class="form-control code-prefix" [readonly]="mode === 'edit'" [ngClass]="[ isSubmitted ? 'submitted' : 'unsubmitted' ]" formControlName="codePrefix" placeholder="XXXX" />
+      <input type="text" minlength="4" maxlength="6" class="form-control code-suffix" [readonly]="mode === 'edit'" [ngClass]="[ isSubmitted ? 'submitted' : 'unsubmitted' ]" formControlName="codeSuffix" placeholder="123456" />
       <div class="muted">First part 2-4 letter uppercase, second part 4-6 digits</div>
     </div>
     <div class="form-group">

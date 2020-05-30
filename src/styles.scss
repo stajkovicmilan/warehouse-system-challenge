@@ -52,11 +52,11 @@ ul {
         font-size: 16px;
         border: 1px solid $color-2;
         border-radius: 3px;
+      }
 
-        &[readonly="readonly"] {
-          background: $color-1;
-          cursor: not-allowed;
-        }
+      [readonly="readonly"], input:read-only {
+        background: $color-1;
+        cursor: not-allowed;
       }
     }
   }
