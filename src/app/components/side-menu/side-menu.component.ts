@@ -26,7 +26,6 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     const data = await this.apiService.getFloors();
     this.subscription = data.subscribe((value) => {
       this.floors = value;
-      console.log(value);
     });
 
     if (this.activeRoute.parent && this.activeRoute.parent.firstChild && this.activeRoute.parent.firstChild.firstChild) {
@@ -41,7 +40,7 @@ export class SideMenuComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  selectFloor(id: number) {
+  selectFloor(id: number): void {
     const existingFloor = this.floors.find((x) => x.id === id);
     if (!existingFloor) {
       console.error('Selected floor does not exists');

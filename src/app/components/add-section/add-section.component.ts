@@ -32,17 +32,17 @@ export class AddSectionComponent implements OnInit {
     });
   }
 
-  async save() {
+  async save(): Promise<void> {
     if (!this.addSectionForm.valid) {
       return;
     }
-    const data = this.addSectionForm.value;
-    data.floorId = +this.floorId;
-    this.apiService.addSection(data);
+    const newSection: Section = this.addSectionForm.value;
+    newSection.floorId = +this.floorId;
+    await this.apiService.addSection(newSection);
     this.resetForm();
   }
 
-  resetForm(){
+  resetForm(): void{
     this.addSectionForm = this.fb.group({
       id: [new Date().getTime(), [Validators.required]],
       name: null,

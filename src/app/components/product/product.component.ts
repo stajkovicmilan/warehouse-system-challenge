@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { Product } from 'src/app/models/product';
+import { Product, ProductModes } from 'src/app/models/product';
+import { Floor } from 'src/app/models/floor';
+import { Section } from 'src/app/models/section';
 
 @Component({
   selector: 'app-product',
@@ -40,7 +42,7 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  async fillInFormData(routeParams: Params) {
+  async fillInFormData(routeParams: Params): Promise<void> {
     if (routeParams.code) {
       this.product = await this.apiService.getProduct(routeParams.code);
 
@@ -66,20 +68,26 @@ export class ProductComponent implements OnInit {
     }
   }
 
-  save(): void {
+  async save(): Promise<void> {
     if (!this.productForm.valid) {
       return;
     }
-    const data = this.productForm.value;
-    data.floorId = +data.floorId;
-    data.sectionId = +data.sectionId;
-    data.code = `${data.codePrefix} ${data.codeSuffix}`;
-    delete data.codePrefix;
-    delete data.codeSuffix;
+    const data: any = this.productForm.value;
+    const floor: Floor = await this.apiService.getFloor(+data.floorId);
+    const section: Section = await this.apiService.getSection(+data.floorId, +data.sectionId);
+    const newProduct: Product = {
+      floorId: +data.floorId,
+      sectionId: +data.sectionId,
+      code: `${data.codePrefix} ${data.codeSuffix}`,
+      quantity: data.quantity,
+      floorName: floor.name,
+      sectionName: section.name,
+    };
+
     if (this.mode === ProductModes.CREATE) {
-      this.apiService.addProduct(data);
+      this.apiService.addProduct(newProduct);
     } else {
-      this.apiService.updateProduct(data);
+      this.apiService.updateProduct(newProduct);
     }
     this.isSubmitted = false;
     this.router.navigateByUrl(`/products/${data.floorId}/${data.sectionId}`);
@@ -98,9 +106,4 @@ export class ProductComponent implements OnInit {
     }
     return null;
   }
-}
-
-export enum ProductModes {
-  EDIT = 'edit',
-  CREATE = 'create'
 }

@@ -19,9 +19,9 @@
     "code": "HHHH 000113",
     "quantity": 100,
     "floorId": 1,
-    "sectionId": 12,
+    "sectionId": 11,
     "floorName": "Floor 1",
-    "sectionName": "Section 21"
+    "sectionName": "Section 11"
   },
   {
     "code": "HHHH 000121",
@@ -29,46 +29,190 @@
     "floorId": 1,
     "sectionId": 12,
     "floorName": "Floor 1",
-    "sectionName": "Section 21"
+    "sectionName": "Section 12"
   },
   {
-    "code": "HHHH 110122",
+    "code": "HHHH 000122",
     "quantity": 100,
-    "floorId": 2,
-    "sectionId": 15,
-    "floorName": "Floor 2",
-    "sectionName": "Section 22"
+    "floorId": 1,
+    "sectionId": 12,
+    "floorName": "Floor 1",
+    "sectionName": "Section 12"
   },
   {
     "code": "HHHH 000123",
     "quantity": 100,
-    "floorId": 2,
-    "sectionId": 15,
-    "floorName": "Floor 2",
-    "sectionName": "Section 22"
+    "floorId": 1,
+    "sectionId": 12,
+    "floorName": "Floor 1",
+    "sectionName": "Section 12"
   },
   {
     "code": "HHHH 000131",
     "quantity": 100,
-    "floorId": 2,
-    "sectionId": 16,
-    "floorName": "Floor 2",
-    "sectionName": "Section 32"
+    "floorId": 1,
+    "sectionId": 13,
+    "floorName": "Floor 1",
+    "sectionName": "Section 13"
   },
   {
     "code": "HHHH 000132",
     "quantity": 100,
-    "floorId": 2,
-    "sectionId": 16,
-    "floorName": "Floor 2",
-    "sectionName": "Section 32"
+    "floorId": 1,
+    "sectionId": 13,
+    "floorName": "Floor 1",
+    "sectionName": "Section 13"
   },
   {
     "code": "HHHH 000133",
     "quantity": 100,
+    "floorId": 1,
+    "sectionId": 13,
+    "floorName": "Floor 1",
+    "sectionName": "Section 13"
+  },
+  {
+    "code": "HHHH 000211",
+    "quantity": 100,
     "floorId": 2,
-    "sectionId": 17,
+    "sectionId": 21,
     "floorName": "Floor 2",
-    "sectionName": "Section 42"
+    "sectionName": "Section 21"
+  },
+  {
+    "code": "HHHH 000212",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 21,
+    "floorName": "Floor 2",
+    "sectionName": "Section 21"
+  },
+  {
+    "code": "HHHH 000213",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 21,
+    "floorName": "Floor 2",
+    "sectionName": "Section 21"
+  },
+  {
+    "code": "HHHH 000221",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 22,
+    "floorName": "Floor 2",
+    "sectionName": "Section 22"
+  },
+  {
+    "code": "HHHH 000222",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 22,
+    "floorName": "Floor 2",
+    "sectionName": "Section 22"
+  },
+  {
+    "code": "HHHH 000223",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 22,
+    "floorName": "Floor 2",
+    "sectionName": "Section 22"
+  },
+  {
+    "code": "HHHH 000231",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 23,
+    "floorName": "Floor 2",
+    "sectionName": "Section 23"
+  },
+  {
+    "code": "HHHH 000232",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 23,
+    "floorName": "Floor 2",
+    "sectionName": "Section 23"
+  },
+  {
+    "code": "HHHH 000233",
+    "quantity": 100,
+    "floorId": 2,
+    "sectionId": 23,
+    "floorName": "Floor 2",
+    "sectionName": "Section 23"
+  },
+  {
+    "code": "HHHH 000311",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 31,
+    "floorName": "Floor 3",
+    "sectionName": "Section 31"
+  },
+  {
+    "code": "HHHH 000312",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 31,
+    "floorName": "Floor 3",
+    "sectionName": "Section 31"
+  },
+  {
+    "code": "HHHH 000313",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 31,
+    "floorName": "Floor 3",
+    "sectionName": "Section 31"
+  },
+  {
+    "code": "HHHH 000321",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 32,
+    "floorName": "Floor 3",
+    "sectionName": "Section 32"
+  },
+  {
+    "code": "HHHH 000322",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 32,
+    "floorName": "Floor 3",
+    "sectionName": "Section 32"
+  },
+  {
+    "code": "HHHH 000323",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 32,
+    "floorName": "Floor 3",
+    "sectionName": "Section 32"
+  },
+  {
+    "code": "HHHH 000331",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 33,
+    "floorName": "Floor 3",
+    "sectionName": "Section 33"
+  },
+  {
+    "code": "HHHH 000332",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 33,
+    "floorName": "Floor 3",
+    "sectionName": "Section 33"
+  },
+  {
+    "code": "HHHH 000333",
+    "quantity": 100,
+    "floorId": 3,
+    "sectionId": 33,
+    "floorName": "Floor 3",
+    "sectionName": "Section 33"
   }
 ]

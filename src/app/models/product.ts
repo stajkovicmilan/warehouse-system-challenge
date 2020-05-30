@@ -6,3 +6,8 @@ export class Product {
   sectionName: string;
   sectionId: number;
 }
+
+export enum ProductModes {
+  EDIT = 'edit',
+  CREATE = 'create'
+}

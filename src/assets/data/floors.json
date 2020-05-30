@@ -1,39 +1,65 @@
-[{
-  "id": 1,
-  "name": "Floor 1",
-  "sections": [{
-    "id": 11,
-    "name": "Section 11"
+[
+  {
+    "id": 1,
+    "name": "Floor 1",
+    "sections": [
+      {
+        "id": 11,
+        "floorId": 1,
+        "name": "Section 11"
+      },
+      {
+        "id": 12,
+        "floorId": 1,
+        "name": "Section 12"
+      },
+      {
+        "id": 13,
+        "floorId": 1,
+        "name": "Section 13"
+      }
+    ]
   },
   {
-    "id": 12,
-    "name": "Section 21"
+    "id": 2,
+    "name": "Floor 2",
+    "sections": [
+      {
+        "id": 21,
+        "floorId": 2,
+        "name": "Section 21"
+      },
+      {
+        "id": 22,
+        "floorId": 2,
+        "name": "Section 22"
+      },
+      {
+        "id": 23,
+        "floorId": 2,
+        "name": "Section 23"
+      }
+    ]
   },
   {
-    "id": 13,
-    "name": "Section 31" 
-  },
-  {
-    "id": 14,
-    "name": "Section 41" 
-  }]
-}, {
-  "id": 2,
-  "name": "Floor 2",
-  "sections": [{
-    "id": 15,
-    "name": "Section 22"
-  },
-  {
-    "id": 16,
-    "name": "Section 32"
-  },
-  {
-    "id": 17,
-    "name": "Section 42" 
-  },
-  {
-    "id": 18,
-    "name": "Section 52" 
-  }]
-}]
+    "id": 3,
+    "name": "Floor 3",
+    "sections": [
+      {
+        "id": 31,
+        "floorId": 3,
+        "name": "Section 31"
+      },
+      {
+        "id": 32,
+        "floorId": 3,
+        "name": "Section 32"
+      },
+      {
+        "id": 33,
+        "floorId": 3,
+        "name": "Section 33"
+      }
+    ]
+  }
+]

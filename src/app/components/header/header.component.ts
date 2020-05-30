@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   }
 
 
-  search() {
+  search(): void {
     if (!this.searchText || this.searchText.length < 2) {
       this.results = [];
       return;
@@ -44,7 +44,7 @@ export class HeaderComponent implements OnInit {
     }, 200);
   }
 
-  cleanResults() {
+  cleanResults(): void {
     this.results = [];
     this.searchText = null;
   }

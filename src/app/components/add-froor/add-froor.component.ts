@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { Floor } from 'src/app/models/floor';
 
 @Component({
   selector: 'app-add-froor',
@@ -24,16 +24,16 @@ export class AddFroorComponent implements OnInit {
     });
   }
 
-  async save() {
+  async save(): Promise<void> {
     if (!this.addFloorForm.valid) {
       return;
     }
-    const data = this.addFloorForm.value;
-    await this.apiService.addFloor(data);
+    const newFloor: Floor = this.addFloorForm.value;
+    await this.apiService.addFloor(newFloor);
     this.resetForm();
   }
 
-  resetForm(){
+  resetForm(): void {
     this.addFloorForm = this.fb.group({
       id: [new Date().getTime(), [Validators.required]],
       name: null,
