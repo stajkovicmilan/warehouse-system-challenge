@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import "./stylings/variables.scss";
 
 html {
   height: calc(100% - 50px);
@@ -19,17 +20,17 @@ ul {
   list-style: none;
 }
 
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $color-1;
+  margin-bottom: 20px;
+}
+
 .form-container {
   width: 100%;
-
-  .title {
-    font-size: 20px;
-    font-weight: 600;
-    width: 100%;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 20px;
-  }
 
   .form {
     max-width: 600px;
@@ -49,11 +50,11 @@ ul {
         height: 36px;
         padding: 0 10px;
         font-size: 16px;
-        border: 1px solid #ccc;
+        border: 1px solid $color-2;
         border-radius: 3px;
 
         &[readonly="readonly"] {
-          background: #ddd;
+          background: $color-1;
           cursor: not-allowed;
         }
       }
@@ -69,5 +70,19 @@ ul {
 
 .muted {
   font-size: 12px;
-  color: #aaa;
+  color: $color-3;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.strong-label {
+  font-weight: 900;
+  min-width: 120px;
+  display: inline-block;
 }

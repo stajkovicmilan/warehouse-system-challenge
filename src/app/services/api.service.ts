@@ -46,6 +46,9 @@ export class ApiService {
     if (!floor) {
       // throw something
     }
+    if (!floor.sections) {
+      floor.sections = [];
+    }
     floor.sections.push(section);
     this.floorsData.next(currentData);
   }

@@ -1,15 +1,15 @@
 <div class="menu">
   <ul class="menu-navigation">
-    <li *ngFor="let floor of floors" class="menu-navigation__item">
+    <li *ngFor="let floor of floors" class="menu-navigation-item">
       <a href="javascript:;" (click)="selectFloor(floor.id)">{{floor.name}}</a>
-      <ul class="menu-sub-navigation" *ngIf="currentFloor === floor.id">
-        <li class="menu-sub-navigation__item" *ngFor="let section of floor.sections">
-          <a routerLink="/products/{{floor.id}}/{{section.id}}">{{section.name}}</a>
+      <ul class="menu-sub-navigation" *ngIf="selectedFloor === floor.id">
+        <li class="menu-sub-navigation-item" *ngFor="let section of floor.sections">
+          <a routerLink="/products/{{floor.id}}/{{section.id}}" [ngClass]="{ 'active': isActive(floor.id, section.id) }">{{section.name}}</a>
         </li>
-        <a routerLink="/add-section/{{floor.id}}" class="navigation-button">
+        <button routerLink="/add-section/{{floor.id}}" class="navigation-button">
           <i class="fas fa-folder-plus"></i>
           Add Section
-        </a>
+        </button>
       </ul>
     </li>
   </ul>

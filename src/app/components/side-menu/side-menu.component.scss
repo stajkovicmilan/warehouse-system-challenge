@@ -1,3 +1,5 @@
+@import "../../../stylings/variables.scss";
+
 .menu {
   width: 250px;
   display: inline-block;
@@ -7,4 +9,42 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.25);
   padding: 10px 20px;
+  box-shadow: 2px 2px 5px $color-2;
+
+  .menu-navigation-item {
+
+    a {
+      color: $color-6;
+      text-decoration: none !important;
+      color: $color-6;
+      text-decoration: none !important;
+      width: 100%;
+      padding: 10px;
+      display: block;
+
+      &:hover, &.active {
+        background-color: $color-10;
+        color: $color-9;
+        border-radius: 5px 0 0 5px;
+      }
+    }
+
+    .menu-sub-navigation {
+      padding-left: 20px;
+    }
+  }
+
+  .navigation-button {
+    background: $color-6;
+    padding: 5px 15px;
+    color: $color-5;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }

@@ -1,11 +1,18 @@
 <div class="product-overview">
-  <div class="product-item" *ngFor="let product of products">
-    <a routerLink="/product/{{product.code}}">
-      <p>{{product.code}}</p>
-      <p>{{product.quantity}}</p>
-      <p>{{product.floorId}}</p>
-      <p>{{product.sectionId}}</p>
-    </a>
+  <div>
+    <div class="title">
+      Products for Floor {{floorId}} / Section {{sectionId}}
+      <button class="button button-primary pull-right" (click)="openAddProduct()">Add Product</button>
+    </div>
   </div>
-  <button class="button button-primary" (click)="openAddProduct()">Add Product</button>
+  <div class="product-item" *ngFor="let product of products">
+    <div routerLink="/product/{{product.code}}">
+      <ul>
+        <li><span class="strong-label">Product:</span> {{product.code}}</li>
+        <li><span class="strong-label">Quantity:</span> {{product.quantity}}</li>
+        <li><span class="strong-label">Floor:</span> {{product.floorName}}</li>
+        <li><span class="strong-label">Section:</span> {{product.sectionName}}</li>
+      </ul>
+    </div>
+  </div>
 </div>
