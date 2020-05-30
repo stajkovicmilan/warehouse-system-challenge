@@ -1,5 +1,6 @@
 <div class="form-container">
-  <div class="title">Add new Product</div>
+  <div *ngIf="mode === 'edit'" class="title">Product {{product.code}}</div>
+  <div *ngIf="mode === 'create'" class="title">Add New Product</div>
   <form class="form" [formGroup]="productForm" (submit)="isSubmitted = true; save()">
     <div class="form-group">
       <label>Code</label>

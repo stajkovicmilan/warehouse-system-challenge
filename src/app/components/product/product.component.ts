@@ -94,7 +94,11 @@ export class ProductComponent implements OnInit {
   }
 
   productCodePrefixValidator(control: AbstractControl): { [key: string]: boolean } | null {
-    if (!control.value || control.value.length < 2 || control.value.length > 4 || /\d/.test(control.value)) {
+    if (
+      !control.value ||
+      control.value.length < 2 ||
+      control.value.length > 4 ||
+      !RegExp(('[A-Z]+$')).test(control.value)) {
       return { invalidCodePrefix: true };
     }
     return null;
