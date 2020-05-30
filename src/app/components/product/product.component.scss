@@ -1,3 +1,5 @@
+@import "../../../stylings/variables.scss";
+
 .form-container {
   .form-group {
     .form-control {
@@ -10,6 +12,9 @@
         display: inline-block;
         width: 120px;
       }
+    }
+    .submitted.ng-invalid, .ng-invalid.ng-dirty {
+      border-color: $color-11;
     }
   }
 }

@@ -14,6 +14,7 @@ export class ProductComponent implements OnInit {
   productForm: FormGroup;
   product: Product;
   mode: ProductModes;
+  isSubmitted: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -80,6 +81,7 @@ export class ProductComponent implements OnInit {
     } else {
       this.apiService.updateProduct(data);
     }
+    this.isSubmitted = false;
     this.router.navigateByUrl(`/products/${data.floorId}/${data.sectionId}`);
   }
 
